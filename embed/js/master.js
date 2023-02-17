@@ -23,6 +23,7 @@ function dataReceive(data) {
     let linkItem = document.createElement('a');
     linkItem.classList.add('link-item');
     linkItem.href = item.url;
+    linkItem.setAttribute('target','_blank')
     let itemPhoto = document.createElement('img');
     itemPhoto.classList.add('item-photo');
     itemPhoto.src = item.photoUrl;
