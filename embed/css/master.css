@@ -78,8 +78,7 @@ body {
   transition: padding 1s, max-height 2.5s;
   padding-left: 8px;
   padding-right: 8px;
-  overflow: hidden;
-
+  overflow: auto;
 }
 
 #banner:not(.hidden-banner) {
