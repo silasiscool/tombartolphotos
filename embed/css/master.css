@@ -1,6 +1,7 @@
 body {
   font-family: Lato, Verdana, sans-serif;
   color: black;
+  margin: 0;
 }
 
 #search-bar {
@@ -64,4 +65,31 @@ body {
 
 .hidden {
   display: none !important;
+}
+
+#full-content {
+  margin: 8px;
+}
+
+#banner {
+  background-color: #053bd1;
+  color: white;
+  box-sizing: border-box;
+  transition: padding 1s, max-height 2.5s;
+  padding-left: 8px;
+  padding-right: 8px;
+  overflow: hidden;
+
+}
+
+#banner:not(.hidden-banner) {
+  padding: 8px;
+  /* height: 100px; */
+  max-height: 250px;
+}
+
+.hidden-banner {
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
