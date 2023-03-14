@@ -39,10 +39,6 @@ body {
     box-sizing: border-box;
   }
 
-  .group-item-text {
-    font-size: 0.75em;
-  }
-
   .group-list.group-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -54,6 +50,10 @@ body {
   display: flex;
   flex-direction: column-reverse;
   gap: 10px;
+}
+
+.group-item-text {
+  font-size: 0.75em;
 }
 
 .link-item, .group-item {
