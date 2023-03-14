@@ -14,7 +14,7 @@ body {
 }
 
 @media (max-width: 450px) {
-  .link-item.link-item {
+  .link-item.link-item, .group-item-button.group-item-button, .group-item.group-item, .group-link-item.group-link-item {
     display: flex;
     height: auto;
     box-sizing: border-box;
@@ -23,20 +23,30 @@ body {
     border-width: 1px;
   }
 
-  .item-photo.item-photo {
+  .item-photo.item-photo, .group-photo.group-photo, .group-item-photo.group-item-photo {
     width: 100%;
     height: auto;
     border-radius: 0;
     opacity: 50%
   }
 
-  .item-text {
+  .item-text, .group-name, .group-item-text {
     position: absolute;
     text-align: center;
     color: white;
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
+  }
+
+  .group-item-text {
+    font-size: 0.75em;
+  }
+
+  .group-list.group-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
   }
 }
 
@@ -46,21 +56,72 @@ body {
   gap: 10px;
 }
 
-.link-item {
+.link-item, .group-item {
   border: 2px solid black;
   border-radius: 10px;
-  height: 120px;
+}
+
+.group-item.open .group-item-button {
+  /* border-bottom-left-radius: 10px; */
+  /* border-bottom: 2px solid black; */
+}
+
+.link-item, .group-item, .group-item-button, .group-link-item {
   display: flex;
   gap: 15px;
   overflow: hidden;
   align-items: center;
   color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0;
+  background: inherit;
   text-decoration: inherit;
+  cursor: pointer;
 }
 
-.item-photo {
+.group-link-item {
+  height: 100px;
+  border-radius: 0;
+  border-top: 2px solid black;
+}
+
+.link-item, .group-item-button {
+  height: 120px;
+}
+
+.group-item {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.group-item-button {
+  border: none;
+  width: 100%;
+}
+
+.group-item:not(.open) .group-list {
+  max-height: 0;
+}
+
+.group-item:not(.open) .group-link-item {
+  max-height: 0;
+  border: none;
+}
+
+.group-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-photo, .group-photo, .group-item-photo {
   height: 100%;
   border-radius: 0 10px 10px 0;
+}
+
+.group-item-photo {
 }
 
 .hidden {
