@@ -77,7 +77,9 @@ function dataReceive(data) {
       contentOutput.appendChild(linkItem);
 
     } else if (contentOutput.children.namedItem(item.group)) {
-      let groupList = contentOutput.children.namedItem(item.group).children[1]
+      let group = contentOutput.children.namedItem(item.group)
+      group.getElementsByClassName('group-item-button')[0].getElementsByClassName('group-photo')[0].src = item.photoUrl;
+      let groupList = group.children[1]
       let groupLinkItem = document.createElement('a');
       groupLinkItem.classList.add('group-link-item');
       groupLinkItem.href = item.url;
